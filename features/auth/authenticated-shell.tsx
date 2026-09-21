@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { AppShell, Button, EmptyState, Feedback, Skeleton } from "@gr/shared-ui";
 import { commonUiUrl } from "@/lib/common-ui-url";
 import { useAuth } from "./auth-provider";
@@ -16,6 +17,7 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
   const [pending, setPending] = useState(false);
   const [logoutError, setLogoutError] = useState(false);
   const isAdministrator = user?.roles.includes(ADMIN_ROLE) ?? false;
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!loading && !sessionError && (!user || !isAdministrator)) {
@@ -57,8 +59,13 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
   return (
     <AppShell
       brand={{ name: "Habitar", description: "Tu comunidad, en un lugar", mark: "h.", href: "/" }}
-      navigation={[{ id: "home", label: "Inicio", href: "/" }]}
-      activeId="home"
+      navigation={[
+        { id: "home", label: "Inicio", href: "/", icon: <span aria-hidden="true">⌂</span> },
+        { id: "dashboard", label: "Tablero", href: "/tablero", icon: <span aria-hidden="true">▤</span> },
+        { id: "administration", label: "Administración", href: "/#administracion", icon: <span aria-hidden="true">▭</span> },
+        { id: "common-areas", label: "Zonas comunes", href: "/zonas-comunes", icon: <span aria-hidden="true">▣</span> },
+      ]}
+      activeId={pathname === "/tablero" ? "dashboard" : pathname === "/zonas-comunes" ? "common-areas" : "home"}
       user={{ name: user.name, caption: "Mi cuenta" }}
       userMenuItems={[]}
       labels={{
