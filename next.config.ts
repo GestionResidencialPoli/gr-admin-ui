@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [{ source: "/api/v1/:path*", destination: `${backendApiUrl}/api/v1/:path*` }];
   },
+  async headers() {
+    return [
+      {
+        source: "/auth/sso/callback",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

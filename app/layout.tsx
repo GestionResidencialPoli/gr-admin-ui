@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { AuthenticatedShell } from "@/features/auth/authenticated-shell";
-import { AuthProvider } from "@/features/auth/auth-provider";
+import { AppAuthBoundary } from "@/features/auth/app-auth-boundary";
 import "@gr/shared-ui/styles.css";
 import "./globals.css";
 
@@ -13,9 +12,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es">
       <body>
-        <AuthProvider>
-          <AuthenticatedShell>{children}</AuthenticatedShell>
-        </AuthProvider>
+        <AppAuthBoundary>{children}</AppAuthBoundary>
       </body>
     </html>
   );
