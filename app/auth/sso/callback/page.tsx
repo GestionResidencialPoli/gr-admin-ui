@@ -40,7 +40,7 @@ export default function AdminSsoCallbackPage() {
         if (!csrfResponse.ok) throw new Error("Unable to initialize CSRF protection");
 
         const csrf = readCookie(CSRF_COOKIE);
-        const response = await fetch("/api/v1/auth/admin-sso/exchange", {
+        const response = await fetch("/api/v1/auth/sso/exchange", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

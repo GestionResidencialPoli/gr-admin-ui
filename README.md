@@ -37,7 +37,7 @@ Ambos se publican construidos (ESM + tipos), así que no hace falta `transpilePa
 
 The Admin receives a short-lived, single-use SSO code at `/auth/sso/callback?code=...`.
 That page initializes CSRF protection through `GET /api/v1/auth/csrf` and exchanges the
-code through the same-origin API proxy with `POST /api/v1/auth/admin-sso/exchange`.
+code through the same-origin API proxy with `POST /api/v1/auth/sso/exchange`.
 It never receives tokens in the URL or JavaScript. The backend must consume the code and
 set the Admin host's HttpOnly session cookies in its response. Failed exchanges remove the
 code and return the user to the Common UI login.
