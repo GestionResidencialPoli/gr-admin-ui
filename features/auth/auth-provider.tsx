@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { onSessionExpired } from "@/lib/http-client";
+import { onSessionExpired } from "@gestionresidencial/auth-client";
 import { authService, type AppUser } from "@/services/auth-service";
 
 type AuthContextValue = {

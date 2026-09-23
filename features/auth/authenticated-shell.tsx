@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { AppShell, Button, EmptyState, Feedback, Skeleton } from "@gr/shared-ui";
+import { AppShell, Button, EmptyState, Feedback, Skeleton } from "@gestionresidencial/shared-ui";
 import { commonUiUrl } from "@/lib/common-ui-url";
 import { useAuth } from "./auth-provider";
 

@@ -1,5 +1,5 @@
-import type { Profile } from "@gr/shared-ui";
-import { ApiClientError, apiFetch } from "@/lib/http-client";
+import type { Profile } from "@gestionresidencial/shared-ui";
+import { ApiClientError, apiFetch } from "@gestionresidencial/auth-client";
 
 export type Role = "RESIDENTE" | "VIGILANTE" | "ADMINISTRACION";
 export type AppUser = Profile & { roles: Role[] };

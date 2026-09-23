@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppAuthBoundary } from "@/features/auth/app-auth-boundary";
-import "@gr/shared-ui/styles.css";
+import "@gestionresidencial/shared-ui/styles.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
