@@ -18,6 +18,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Biblioteca compartida
+
+Este repositorio consume dos paquetes públicos publicados en npmjs.com por `gr-common-ui`:
+
+- [`@gestionresidencial/shared-ui`](https://www.npmjs.com/package/@gestionresidencial/shared-ui) — componentes de presentación (`AppShell`, `Card`, `Button`, `Feedback`, `EmptyState`, `Skeleton`, …).
+- [`@gestionresidencial/auth-client`](https://www.npmjs.com/package/@gestionresidencial/auth-client) — cliente HTTP con CSRF y reintento tras refresh (`apiFetch`), y el contrato de sesión (`onSessionExpired`, `ApiClientError`).
+
+Se instalan como dependencias normales, en su versión publicada — no como enlace local ni workspace, porque este es un repositorio distinto a `gr-common-ui`:
+
+```bash
+pnpm add @gestionresidencial/shared-ui @gestionresidencial/auth-client
+```
+
+Ambos se publican construidos (ESM + tipos), así que no hace falta `transpilePackages` en `next.config.ts`. La decisión de distribuirlos por npm, en lugar de GitHub Packages, está en [ADR-002](https://github.com/GestionResidencialPoli/gr-common-ui/blob/main/docs/decisiones/ADR-002-distribucion-frontend.md) de `gr-common-ui`.
+
 ## SSO callback
 
 The Admin receives a short-lived, single-use SSO code at `/auth/sso/callback?code=...`.

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button, Card, Feedback } from "@gr/shared-ui";
+import { Button, Card, Feedback } from "@gestionresidencial/shared-ui";
 import { communityService, type CommonArea } from "@/services/community-service";
 
 export function CommonAreasManager() {

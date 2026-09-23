@@ -1,4 +1,4 @@
-import { apiFetch } from "@/lib/http-client";
+import { apiFetch } from "@gestionresidencial/auth-client";
 
 export type Publication = { id: string; title: string; content: string; author: string; publishedAt: string; images: string[] };
 export type Reservation = { id: string; resident: string; apartment: string; date: string; time: string; guests: number };

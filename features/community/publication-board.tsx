@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Button, Card, Feedback } from "@gr/shared-ui";
+import { Button, Card, Feedback } from "@gestionresidencial/shared-ui";
 import { communityService, type Publication } from "@/services/community-service";
 
 const blank = { title: "", content: "" };

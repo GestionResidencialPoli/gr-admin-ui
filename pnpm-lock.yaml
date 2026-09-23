@@ -109,9 +109,12 @@ importers:
 
   .:
     dependencies:
-      '@gr/shared-ui':
-        specifier: file:../gr-common-ui/packages/shared-ui
-        version: file:../gr-common-ui/packages/shared-ui(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@gestionresidencial/auth-client':
+        specifier: ^0.1.1
+        version: 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@gestionresidencial/shared-ui':
+        specifier: ^0.1.1
+        version: 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       next:
         specifier: 16.3.5
         version: 16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -276,8 +279,11 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@gr/shared-ui@file:../gr-common-ui/packages/shared-ui':
-    resolution: {directory: ../gr-common-ui/packages/shared-ui, type: directory}
+  '@gestionresidencial/auth-client@0.1.1':
+    resolution: {integrity: sha512-N9uN1x5qGKkhPVSUm0MGUNO8sPyIc6KB6mT/9Mv4c3ayKPkIAWK8KHDQ2RGOgMHA9G5Ff6A0WP+Jcjh0tj57Rw==}
+
+  '@gestionresidencial/shared-ui@0.1.1':
+    resolution: {integrity: sha512-9chQRhsK3SM8o4oyaAVs34+A75jfegx42E/MnTRGLwj1EQlm/wvyDH3zLkZfeA+GxVdqZrtxJ+1ENZrfT2OB4Q==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -2294,7 +2300,14 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@gr/shared-ui@file:../gr-common-ui/packages/shared-ui(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@gestionresidencial/auth-client@0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+    dependencies:
+      '@gestionresidencial/shared-ui': 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+    transitivePeerDependencies:
+      - react
+      - react-dom
+
+  '@gestionresidencial/shared-ui@0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
