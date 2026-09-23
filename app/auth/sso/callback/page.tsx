@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { commonUiUrl } from "@/lib/common-ui-url";
+import { authUiUrl } from "@/lib/auth-ui-url";
 
 const CSRF_COOKIE = "XSRF-TOKEN";
 const CSRF_HEADER = "X-XSRF-TOKEN";
@@ -17,7 +17,7 @@ function removeCodeFromUrl() {
 
 function redirectToLogin() {
   removeCodeFromUrl();
-  window.location.replace(new URL("/login", commonUiUrl).toString());
+  window.location.replace(new URL("/login", authUiUrl).toString());
 }
 
 export default function AdminSsoCallbackPage() {

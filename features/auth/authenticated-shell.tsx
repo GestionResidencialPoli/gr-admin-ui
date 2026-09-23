@@ -3,13 +3,13 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { AppShell, Button, EmptyState, Feedback, Skeleton } from "@gestionresidencial/shared-ui";
-import { commonUiUrl } from "@/lib/common-ui-url";
+import { authUiUrl } from "@/lib/auth-ui-url";
 import { useAuth } from "./auth-provider";
 
 const ADMIN_ROLE = "ADMINISTRACION";
 
 function loginUrl(): string {
-  return new URL("/login", commonUiUrl).toString();
+  return new URL("/login", authUiUrl).toString();
 }
 
 export function AuthenticatedShell({ children }: { children: ReactNode }) {
