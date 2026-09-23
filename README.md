@@ -18,6 +18,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## SSO callback
+
+The Admin receives a short-lived, single-use SSO code at `/auth/sso/callback?code=...`.
+That page initializes CSRF protection through `GET /api/v1/auth/csrf` and exchanges the
+code through the same-origin API proxy with `POST /api/v1/auth/admin-sso/exchange`.
+It never receives tokens in the URL or JavaScript. The backend must consume the code and
+set the Admin host's HttpOnly session cookies in its response. Failed exchanges remove the
+code and return the user to the Common UI login.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
