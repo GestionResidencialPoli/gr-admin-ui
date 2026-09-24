@@ -3,14 +3,10 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { AppShell, Button, EmptyState, Feedback, Skeleton } from "@gestionresidencial/shared-ui";
-import { authUiUrl } from "@/lib/auth-ui-url";
+import { authUiLoginUrl } from "@gestionresidencial/auth-client";
 import { useAuth } from "./auth-provider";
 
 const ADMIN_ROLE = "ADMINISTRACION";
-
-function loginUrl(): string {
-  return new URL("/login", authUiUrl).toString();
-}
 
 export function AuthenticatedShell({ children }: { children: ReactNode }) {
   const { user, loading, sessionError, logout } = useAuth();
@@ -21,7 +17,7 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!loading && !sessionError && (!user || !isAdministrator)) {
-      window.location.replace(loginUrl());
+      window.location.replace(authUiLoginUrl());
     }
   }, [isAdministrator, loading, sessionError, user]);
 
@@ -31,7 +27,7 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
 
     try {
       await logout();
-      window.location.replace(loginUrl());
+      window.location.replace(authUiLoginUrl());
     } catch {
       setLogoutError(true);
     } finally {
