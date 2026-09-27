@@ -3,16 +3,15 @@
 import { useEffect } from "react";
 import { Skeleton } from "@gestionresidencial/shared-ui";
 import { initiateSsoHandoff } from "@gestionresidencial/auth-client";
-import { wallUiUrl } from "@/lib/wall-ui-url";
 
-export function WallRedirect() {
+export function AppRedirect({ targetOrigin, label }: { targetOrigin: string; label: string }) {
   useEffect(() => {
-    initiateSsoHandoff("admin", wallUiUrl()).then();
-  }, []);
+    initiateSsoHandoff("admin", targetOrigin).then();
+  }, [targetOrigin]);
 
   return (
     <div className="standalone-state">
-      <Skeleton label="Abriendo el muro" />
+      <Skeleton label={label} />
     </div>
   );
 }
