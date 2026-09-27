@@ -110,8 +110,8 @@ importers:
   .:
     dependencies:
       '@gestionresidencial/auth-client':
-        specifier: ^0.1.1
-        version: 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@gestionresidencial/shared-ui':
         specifier: ^0.1.1
         version: 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -279,8 +279,11 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@gestionresidencial/auth-client@0.1.1':
-    resolution: {integrity: sha512-N9uN1x5qGKkhPVSUm0MGUNO8sPyIc6KB6mT/9Mv4c3ayKPkIAWK8KHDQ2RGOgMHA9G5Ff6A0WP+Jcjh0tj57Rw==}
+  '@gestionresidencial/auth-client@0.2.0':
+    resolution: {integrity: sha512-+VvXSHQgismEZwhNk5jxeji7BT3JD2WCzbzbsRoUmGfpziH1SsLDRpj6+uBkVJwWUxMST2NHWN0QbY/tlbFh3Q==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
 
   '@gestionresidencial/shared-ui@0.1.1':
     resolution: {integrity: sha512-9chQRhsK3SM8o4oyaAVs34+A75jfegx42E/MnTRGLwj1EQlm/wvyDH3zLkZfeA+GxVdqZrtxJ+1ENZrfT2OB4Q==}
@@ -2300,12 +2303,11 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@gestionresidencial/auth-client@0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@gestionresidencial/auth-client@0.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@gestionresidencial/shared-ui': 0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-    transitivePeerDependencies:
-      - react
-      - react-dom
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
   '@gestionresidencial/shared-ui@0.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
