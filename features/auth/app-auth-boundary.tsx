@@ -7,7 +7,6 @@ import { AuthProvider } from "./auth-provider";
 
 const SSO_CALLBACK_PATH = "/auth/sso/callback";
 
-/** Keeps the SSO hand-off free of session requests until it has exchanged its code. */
 export function AppAuthBoundary({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
