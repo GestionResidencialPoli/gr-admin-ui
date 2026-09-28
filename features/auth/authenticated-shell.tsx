@@ -52,16 +52,21 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
 
   if (!user || !isAdministrator) return null;
 
+  const navigation = [
+    { id: "home", label: "Inicio", href: "/", icon: <span aria-hidden="true">⌂</span> },
+    { id: "dashboard", label: "Tablero", href: "/tablero", icon: <span aria-hidden="true">▤</span> },
+    { id: "common-areas", label: "Zonas comunes", href: "/zonas-comunes", icon: <span aria-hidden="true">▣</span> },
+    { id: "porteria", label: "Portería", href: "/porteria", icon: <span aria-hidden="true">◈</span> },
+    { id: "apartamentos", label: "Apartamentos", href: "/apartamentos", icon: <span aria-hidden="true">▭</span> },
+    { id: "vigilantes", label: "Vigilantes", href: "/vigilantes", icon: <span aria-hidden="true">◎</span> },
+  ];
+  const activeId = navigation.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.id;
+
   return (
     <AppShell
       brand={{ name: "Habitar", description: "Tu comunidad, en un lugar", mark: "h.", href: "/" }}
-      navigation={[
-        { id: "home", label: "Inicio", href: "/", icon: <span aria-hidden="true">⌂</span> },
-        { id: "dashboard", label: "Tablero", href: "/tablero", icon: <span aria-hidden="true">▤</span> },
-        { id: "administration", label: "Administración", href: "/#administracion", icon: <span aria-hidden="true">▭</span> },
-        { id: "common-areas", label: "Zonas comunes", href: "/zonas-comunes", icon: <span aria-hidden="true">▣</span> },
-      ]}
-      activeId={pathname === "/tablero" ? "dashboard" : pathname === "/zonas-comunes" ? "common-areas" : "home"}
+      navigation={navigation}
+      activeId={activeId}
       user={{ name: user.name, caption: "Mi cuenta" }}
       userMenuItems={[]}
       labels={{
