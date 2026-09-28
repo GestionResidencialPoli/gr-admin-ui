@@ -41,6 +41,22 @@ export default function Home() {
               <strong>Ir a portería →</strong>
             </Card>
           </Link>
+          <Link href="/apartamentos">
+            <Card>
+              <span className="module-icon">▭</span>
+              <h3>Apartamentos</h3>
+              <p>Registra apartamentos, propietarios y arrendatarios.</p>
+              <strong>Gestionar apartamentos →</strong>
+            </Card>
+          </Link>
+          <Link href="/vigilantes">
+            <Card>
+              <span className="module-icon">◎</span>
+              <h3>Vigilantes</h3>
+              <p>Crea y administra las cuentas del personal de vigilancia.</p>
+              <strong>Gestionar vigilantes →</strong>
+            </Card>
+          </Link>
         </div>
       </section>
     </div>
