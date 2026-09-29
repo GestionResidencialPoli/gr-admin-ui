@@ -65,6 +65,14 @@ export default function Home() {
               <strong>Abrir módulo financiero →</strong>
             </Card>
           </Link>
+          <Link href="/contacto">
+            <Card>
+              <span className="module-icon">✉</span>
+              <h3>Contacto</h3>
+              <p>Revisa las solicitudes recibidas desde el sitio público.</p>
+              <strong>Abrir bandeja de contacto →</strong>
+            </Card>
+          </Link>
         </div>
       </section>
     </div>
