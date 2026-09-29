@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Card } from "@gestionresidencial/shared-ui";
 
-const billingUiUrl = process.env.NEXT_PUBLIC_BILLING_UI_URL || "http://localhost:3007";
-
 export default function Home() {
   return (
     <div className="admin-home">
@@ -59,14 +57,14 @@ export default function Home() {
               <strong>Gestionar vigilantes →</strong>
             </Card>
           </Link>
-          <a href={billingUiUrl} target="_blank" rel="noreferrer">
+          <Link href="/finanzas">
             <Card>
               <span className="module-icon">$</span>
               <h3>Finanzas</h3>
               <p>Genera cobros, registra pagos y consulta la cartera de la comunidad.</p>
               <strong>Abrir módulo financiero →</strong>
             </Card>
-          </a>
+          </Link>
         </div>
       </section>
     </div>
