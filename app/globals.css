@@ -62,9 +62,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
 }
-.contact-error {
-  color: #8c281d;
-}
 @media (max-width: 680px) {
   .contact-item {
     flex-direction: column;
