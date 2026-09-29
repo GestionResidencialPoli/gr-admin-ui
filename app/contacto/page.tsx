@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ApiClientError, apiFetch } from "@gestionresidencial/auth-client";
+import { Feedback } from "@gestionresidencial/shared-ui";
 
 type ContactStatus = "NUEVA" | "EN_REVISION" | "RESPONDIDA" | "CERRADA";
 type ContactRequest = {
@@ -80,11 +81,7 @@ export default function ContactInboxPage() {
       >
         Actualizar
       </button>
-      {error && (
-        <p className="contact-error" role="alert">
-          {error}
-        </p>
-      )}
+      {error && <Feedback error>{error}</Feedback>}
       {loading && <p role="status">Cargando solicitudes…</p>}
       {!loading && items.length === 0 && !error && (
         <p>No hay solicitudes de contacto.</p>
