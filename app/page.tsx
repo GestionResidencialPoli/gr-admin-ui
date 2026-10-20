@@ -7,7 +7,10 @@ export default function Home() {
       <section className="admin-welcome">
         <span className="gr-eyebrow">Tu espacio de administración</span>
         <h1>Hola, administración.</h1>
-        <p>Gestiona la comunicación y los espacios de tu comunidad desde un solo lugar.</p>
+        <p>
+          Gestiona la comunicación y los espacios de tu comunidad desde un solo
+          lugar.
+        </p>
       </section>
       <section>
         <div className="section-title">
@@ -29,7 +32,9 @@ export default function Home() {
             <Card>
               <span className="module-icon">▣</span>
               <h3>Zonas comunes</h3>
-              <p>Consulta reservas y controla la disponibilidad de cada zona.</p>
+              <p>
+                Consulta reservas y controla la disponibilidad de cada zona.
+              </p>
               <strong>Gestionar zonas →</strong>
             </Card>
           </Link>
@@ -37,7 +42,10 @@ export default function Home() {
             <Card>
               <span className="module-icon">◈</span>
               <h3>Portería</h3>
-              <p>Consulta el histórico de ingresos y configura los cupos de parqueadero.</p>
+              <p>
+                Consulta el histórico de ingresos y configura los cupos de
+                parqueadero.
+              </p>
               <strong>Ir a portería →</strong>
             </Card>
           </Link>
@@ -55,6 +63,25 @@ export default function Home() {
               <h3>Vigilantes</h3>
               <p>Crea y administra las cuentas del personal de vigilancia.</p>
               <strong>Gestionar vigilantes →</strong>
+            </Card>
+          </Link>
+          <Link href="/finanzas">
+            <Card>
+              <span className="module-icon">$</span>
+              <h3>Finanzas</h3>
+              <p>
+                Genera cobros, registra pagos y consulta la cartera de la
+                comunidad.
+              </p>
+              <strong>Abrir módulo financiero →</strong>
+            </Card>
+          </Link>
+          <Link href="/contacto">
+            <Card>
+              <span className="module-icon">✉</span>
+              <h3>Contacto</h3>
+              <p>Revisa las solicitudes recibidas desde el sitio público.</p>
+              <strong>Abrir bandeja de contacto →</strong>
             </Card>
           </Link>
         </div>
