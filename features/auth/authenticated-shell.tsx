@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import {
   EmptyState,
@@ -20,20 +20,26 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
   const isAdministrator = user?.roles.includes(ADMIN_ROLE) ?? false;
   const pathname = usePathname();
 
+  const signingOut = useRef(false);
+
   useEffect(() => {
-    if (!loading && !sessionError && (!user || !isAdministrator)) {
+    if (!signingOut.current && !loading && !sessionError && (!user || !isAdministrator)) {
       window.location.replace(authUiLoginUrl());
     }
   }, [isAdministrator, loading, sessionError, user]);
 
   async function signOut() {
+    signingOut.current = true;
     setPending(true);
     setLogoutError(false);
 
     try {
       await logout();
-      window.location.replace(authUiLoginUrl());
+      const loginUrl = new URL(authUiLoginUrl());
+      loginUrl.searchParams.set("logout", "1");
+      window.location.replace(loginUrl.toString());
     } catch {
+      signingOut.current = false;
       setLogoutError(true);
     } finally {
       setPending(false);
