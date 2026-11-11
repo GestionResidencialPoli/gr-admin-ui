@@ -33,6 +33,10 @@ pnpm add @gestionresidencial/shared-ui @gestionresidencial/auth-client
 
 Ambos se publican construidos (ESM + tipos), así que no hace falta `transpilePackages` en `next.config.ts`. La decisión de distribuirlos por npm, en lugar de GitHub Packages, está en [ADR-002](https://github.com/GestionResidencialPoli/gr-common-ui/blob/main/docs/decisiones/ADR-002-distribucion-frontend.md) de `gr-common-ui`.
 
+## Notificaciones en tiempo real
+
+`features/notifications/wall-notification-listener.tsx` abre un WebSocket en el mismo origen de la página (`/api/v1/publicaciones/eventos/ws`). En el stack local, nginx (`gr-infra/nginx`) reenvía `/api/` al gateway, incluido el upgrade. Sin nginx (`pnpm dev`), define `NEXT_PUBLIC_BACKEND_WS_URL=ws://localhost:4000` antes de compilar.
+
 ## SSO callback
 
 The Admin receives a short-lived, single-use SSO code at `/auth/sso/callback?code=...`.
