@@ -10,6 +10,7 @@ import {
 } from "@gestionresidencial/shared-ui";
 import { authUiLoginUrl, openPlatformUrl } from "@gestionresidencial/auth-client";
 import { useAuth } from "./auth-provider";
+import { WallNotificationListener } from "@/features/notifications/wall-notification-listener";
 
 const ADMIN_ROLE = "ADMINISTRACION";
 
@@ -79,6 +80,7 @@ export function AuthenticatedShell({ children }: { children: ReactNode }) {
       {logoutError && (
         <Feedback error>No se pudo cerrar sesión. Inténtalo de nuevo.</Feedback>
       )}
+      <WallNotificationListener />
       {children}
     </PlatformShell>
   );
