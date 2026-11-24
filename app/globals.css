@@ -192,3 +192,26 @@
     grid-template-columns: 1fr;
   }
 }
+
+.page-footer { flex-wrap: wrap; font-size: 12px; }
+.page-heading p { max-width: 70ch; }
+.gr-reserva-item { min-width: 0; }
+.gr-reserva-item > div { min-width: 0; overflow-wrap: anywhere; font-size: 14px; }
+.gr-reserva-filtros { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.gr-ingreso-fila { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 600px) {
+ .gr-ingreso-fila { grid-template-columns: 1fr; }
+ .gr-reserva-item { flex-direction: column; align-items: stretch; }
+ .gr-reserva-item > .gr-button { width: 100%; }
+ .gr-reserva-item .gr-form-actions { width: 100%; }
+ .gr-wall-notification { flex-wrap: wrap; }
+ .section-title { flex-wrap: wrap; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+ .admin-home { gap: 28px; }
+ .admin-welcome { padding: 16px 0 28px; }
+ .admin-module-grid .gr-card { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 4px 16px; }
+ .admin-module-grid .module-icon { grid-row: span 3; margin: 0; }
+ .admin-module-grid p { margin: 0 0 8px; }
+}
